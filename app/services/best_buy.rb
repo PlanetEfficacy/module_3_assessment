@@ -4,10 +4,10 @@ class BestBuy
               :response,
               :total
 
-  def inialize(zip)
+  def initialize(zip)
     @zip = zip
     @response = conn.get "stores(area(#{zip},25))?format=json&show=storeId,storeType,name,city,distance,phone&pageSize=15&apiKey=#{ENV['BEST_BUY_KEY']}"
-    @total = response.total
+    @total = response[:total]
   end
 
   def conn
@@ -18,5 +18,7 @@ class BestBuy
     end
   end
 
-  def service
+  def stores
+
+  end
 end
