@@ -25,7 +25,7 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/vcr_cassettes"
-  config.hook_into :webmock
-end
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/vcr_cassettes"
+#   config.hook_into :webmock
+# end
