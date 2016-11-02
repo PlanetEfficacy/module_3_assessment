@@ -1,4 +1,5 @@
 class Api::V1::ItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     render json: Item.all
@@ -21,6 +22,6 @@ class Api::V1::ItemsController < ApplicationController
   private
 
     def item_params
-      params.require(:item).permit(:name, :description, :image_url)
+      params.permit(:name, :description, :image_url)
     end
 end
