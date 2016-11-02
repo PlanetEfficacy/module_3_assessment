@@ -2,12 +2,14 @@ class BestBuy
 
   attr_reader :zip,
               :response,
+              :body,
               :total
 
   def initialize(zip)
     @zip = zip
     @response = conn.get "stores(area(#{zip},25))?format=json&show=storeId,storeType,name,city,distance,phone&pageSize=15&apiKey=#{ENV['BEST_BUY_KEY']}"
-    @total = response[:total]
+    @body = JSON.parse(response.body)
+    @total = body["total"]
   end
 
   def conn
@@ -19,6 +21,9 @@ class BestBuy
   end
 
   def stores
-
+    binding.pry
+    @body["stores"].map do |raw_store|
+      Store.new(raw_store)
+    end
   end
 end
