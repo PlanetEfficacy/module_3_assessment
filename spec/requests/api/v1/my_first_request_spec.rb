@@ -5,7 +5,7 @@ RSpec.describe "Get request to /api/v1/items", :type => :request do
     items = FactoryGirl.create_list(:item, 2)
     get api_v1_items_path
 
-    items = JSON.parse(response)
+    items = JSON.parse(response.body)
 
     expect(response).to have_http_status(200)
     expect(items.class).to eq(Array)

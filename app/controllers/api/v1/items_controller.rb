@@ -1,8 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
 
   def index
-    @items = Item.all
-    render status: :ok
-    render :json => {:name => "David"}
+    render json: Item.all
   end
 end
