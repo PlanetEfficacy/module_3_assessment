@@ -5,4 +5,8 @@ class StoresController < ApplicationController
     @stores = service.stores
     @total = service.total
   end
+
+  def show
+    # @store = StoreFinderService.new(params[:id])
+  end
 end

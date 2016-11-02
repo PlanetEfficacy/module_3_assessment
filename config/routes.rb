@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'items#index'
   get 'search', to: "stores#index"
-  get 'store/:id', to: "stores#show"
+  get 'stores/:id', to: "stores#show"
 
   namespace :api do
     namespace :v1 do
