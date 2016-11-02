@@ -10,6 +10,6 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     Item.find(params[:id]).destroy
-    render status: :no_content
+    render json: {}, status: :no_content
   end
 end
