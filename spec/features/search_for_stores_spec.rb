@@ -4,7 +4,7 @@ RSpec.feature "user searchs for stores by zipcode" do
   scenario "and sees stores within 25 miles of the zipcode" do
     visit root_path
     fill_in "search", with: "80202"
-    click_button "search"
+    click_button "Search"
 
     expect(current_path).to eq(search_path)
     expect(page).to have_content("Stores within 25 miles of 80202")
