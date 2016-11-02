@@ -21,8 +21,7 @@ class BestBuy
   end
 
   def stores
-    binding.pry
-    @body["stores"].map do |raw_store|
+    stores = body["stores"].map do |raw_store|
       Store.new(raw_store)
     end
   end

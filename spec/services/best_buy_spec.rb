@@ -8,7 +8,7 @@ RSpec.describe BestBuy do
     expect(service.total).to eq(17)
 
     store = service.stores.first
-
+    
     expect(store.store_id).to eq("2740")
     expect(store.store_type).to eq("Mobile")
     expect(store.name).to eq("Cherry Creek Shopping Center")
