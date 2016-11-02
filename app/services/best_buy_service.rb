@@ -1,4 +1,4 @@
-class BestBuy
+class BestBuyService
 
   attr_reader :zip,
               :response,
@@ -25,4 +25,5 @@ class BestBuy
       Store.new(raw_store)
     end
   end
+
 end

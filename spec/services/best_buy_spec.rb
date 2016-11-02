@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe BestBuy do
+RSpec.describe BestBuyService do
   it "returns stores by zipcode" do
-    service = BestBuy.new(80202)
+    service = BestBuyService.new(80202)
 
     expect(service.stores.count).to eq(15)
     expect(service.total).to eq(17)
 
     store = service.stores.first
-    
+
     expect(store.store_id).to eq("2740")
     expect(store.store_type).to eq("Mobile")
     expect(store.name).to eq("Cherry Creek Shopping Center")

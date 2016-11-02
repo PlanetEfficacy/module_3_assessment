@@ -10,12 +10,12 @@ RSpec.feature "user searchs for stores by zipcode" do
     expect(page).to have_content("Stores within 25 miles of 80202")
     expect(page).to have_content("17 Total Stores")
     expect(page).to have_css("tr", count: 16)
-    within "tr.results" do
-      expect(page).to have_link("long name")
-      expect(page).to have_content("city")
-      expect(page).to have_content("distance")
-      expect(page).to have_content("phone number")
-      expect(page).to have_content("store type")
+    within "tr#2740" do
+      expect(page).to have_link("Cherry Creek Shopping Center")
+      expect(page).to have_content("Denver")
+      expect(page).to have_content("3.25")
+      expect(page).to have_content("303-270-9189")
+      expect(page).to have_content("Mobile")
     end
   end
 end

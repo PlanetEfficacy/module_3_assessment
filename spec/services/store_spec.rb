@@ -15,5 +15,6 @@ RSpec.describe Store do
     expect(store.name).to eq("Cherry Creek Shopping Center")
     expect(store.distance).to eq("3.25")
     expect(store.phone).to eq("303-270-9189")
+    expect(store.city).to eq("Denver")
   end
 end

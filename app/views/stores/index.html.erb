@@ -1,0 +1,22 @@
+<div class="container">
+  <h4>Stores within 25 miles of <%= @zip %></h4>
+  <h5><%= @total %> Total Stores </h5>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Distance</th>
+      <th>Phone</th>
+      <th>Type</th>
+    </tr>
+    <% @stores.each do |store| %>
+      <tr id="<%= store.store_id %>">
+        <td><%= link_to "store/#{store.store_id}", store.name %></td>
+        <td><%= store.city %></td>
+        <td><%= store.distance %></td>
+        <td><%= store.phone %></td>
+        <td><%= store.store_type %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
