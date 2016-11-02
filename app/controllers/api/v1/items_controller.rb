@@ -9,7 +9,6 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     item = Item.create(item_params)
     render json: item
   end
@@ -22,6 +21,6 @@ class Api::V1::ItemsController < ApplicationController
   private
 
     def item_params
-
+      params.require(:item).permit(:name, :description, :image_url)
     end
 end

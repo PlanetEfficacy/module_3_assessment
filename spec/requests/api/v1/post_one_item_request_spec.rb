@@ -7,7 +7,7 @@ RSpec.describe "POST request to /api/v1/items with name, description, and image_
     item = JSON.parse(response.body)
 
     expect(response).to have_http_status(200)
-    expect(items.class).to eq(Hash)
+    expect(item.class).to eq(Hash)
     expect(item["id"]).to eq(Item.first.id)
     expect(item["name"]).to eq(Item.first.name)
     expect(item["description"]).to eq(Item.first.description)
