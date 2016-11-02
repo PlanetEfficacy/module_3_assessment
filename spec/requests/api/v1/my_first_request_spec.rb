@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Get request to /api/v1/items", :type => :request do
   it "gets all items and their attributes as json" do
     items = FactoryGirl.create_list(:item, 2)
-    get "/api/v1/items"
+    get api_v1_items_path
 
     items = JSON.parse(response)
 
